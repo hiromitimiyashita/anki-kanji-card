@@ -1,0 +1,529 @@
+/* =========================================
+   VARIÁVEIS (LIGHT MODE / DARK MODE)
+========================================= */
+:root {
+    /* LIGHT MODE (Padrão) */
+    --bg-body: #f1f5f9;
+    --bg-front-card: rgba(255, 255, 255, 0.90);
+    /* Leve transparência pro front */
+    --bg-solid: #ffffff;
+    --bg-tech: #f8fafc;
+    --bg-illus: #fffbeb;
+    --text-main: #0f172a;
+    --text-desc: #334155;
+    --text-sub: #64748b;
+    --text-muted: #94a3b8;
+    --accent: #0284c7;
+    --border: #cbd5e1;
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    --badge-bg: #e0f2fe;
+    --badge-text: #0284c7;
+    --img-filter: invert(1);
+    /* Inverte as linhas brancas do GIMP pra ficarem pretas */
+}
+
+.nightMode,
+.night_mode {
+    /* DARK MODE (Anki Nativo) */
+    --bg-body: #0f1117;
+    --bg-front-card: rgba(30, 33, 43, 0.90);
+    --bg-solid: #1e212b;
+    --bg-tech: #171923;
+    --bg-illus: #242836;
+    --text-main: #e2e8f0;
+    --text-desc: #cbd5e1;
+    --text-sub: #64748b;
+    --text-muted: #94a3b8;
+    --accent: #38bdf8;
+    --border: #2d313f;
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    --badge-bg: #0d2838;
+    --badge-text: #38bdf8;
+    --img-filter: brightness(1.2);
+    /* Mantém branco no escuro */
+}
+
+/* =========================================
+   BASE
+========================================= */
+.card {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: var(--bg-body) !important;
+    color: var(--text-main);
+    margin: 0;
+    padding: 0;
+    text-align: left;
+}
+
+.sub-label,
+.pt-sub,
+.pt-inline {
+    font-size: 8.5px;
+    color: var(--text-muted);
+    font-weight: normal;
+    display: block;
+    margin-top: 2px;
+}
+
+/* =========================================
+   FRONT CONTAINER (FUNDO E LARGURA 1270PX)
+========================================= */
+.front-bg {
+    /* IMAGEM DE FUNDO AQUI */
+    background-image: url('_fundo_front.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+    /* Evita colar nas bordas no mobile */
+    box-sizing: border-box;
+}
+
+.front-layout {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1270px;
+    /* Limite de largura solicitado */
+    margin: 0 auto;
+}
+
+.info-section {
+    background: var(--bg-front-card);
+    border-radius: 12px;
+    padding: 15px;
+    border: 1px solid var(--border);
+    backdrop-filter: blur(8px);
+    /* Efeito bonito por cima da imagem */
+}
+
+.section-header {
+    margin-bottom: 10px;
+}
+
+.title {
+    font-size: 13px;
+    font-weight: bold;
+    color: var(--accent);
+    text-transform: uppercase;
+}
+
+.sub-title {
+    font-size: 11px;
+    color: var(--text-sub);
+}
+
+.main-desc {
+    font-size: 11px;
+    color: var(--text-desc);
+    margin-top: 5px;
+    margin-bottom: 15px;
+    line-height: 1.3;
+}
+
+.pt-inline {
+    color: var(--text-sub);
+}
+
+.grid-topo {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+}
+
+.item {
+    font-size: 10px;
+    color: var(--text-desc);
+    line-height: 1.3;
+}
+
+.item strong {
+    color: var(--text-main);
+}
+
+.sub {
+    display: block;
+    font-size: 9px;
+    color: var(--text-sub);
+    margin-top: 2px;
+}
+
+.kanji-display {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.kanji-huge {
+    font-size: clamp(120px, 30vw, 220px);
+    font-weight: bold;
+    color: var(--text-main);
+    text-shadow: 0 0 40px rgba(56, 189, 248, 0.2);
+}
+
+.rules-flex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.rule-card {
+    flex: 1 1 90px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.rule-card img {
+    max-height: 35px;
+    margin-bottom: 5px;
+    filter: var(--img-filter);
+    display: block;
+}
+
+.rule-txt {
+    font-size: 10px;
+    color: var(--text-desc);
+}
+
+.full-width {
+    flex: 1 1 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    border-top: 1px dashed var(--border);
+    padding-top: 10px;
+}
+
+.full-width img {
+    margin-bottom: 0;
+}
+
+.full-width .rule-txt {
+    text-align: left;
+}
+
+.sub-images-flex {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.sub-image-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sub-image-item .illus-icon {
+    font-size: 10px;
+    color: var(--text-desc);
+    margin-bottom: 4px;
+}
+
+.sub-image-item img {
+    margin: 0;
+    max-height: 40px;
+}
+
+/* =========================================
+   BACK (VERSO)
+========================================= */
+.study-card {
+    max-width: 550px;
+    margin: 20px auto;
+    background-color: var(--bg-solid);
+    border-radius: 16px;
+    padding: 30px;
+    box-sizing: border-box;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border);
+}
+
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+}
+
+.badge {
+    font-size: 12px;
+    font-weight: bold;
+    padding: 4px 12px;
+    border-radius: 20px;
+}
+
+.serial {
+    background-color: var(--badge-bg);
+    color: var(--badge-text);
+}
+
+.strokes {
+    background-color: var(--border);
+    color: var(--text-muted);
+}
+
+.main-block {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    margin-bottom: 35px;
+}
+
+.kanji-large {
+    font-size: 90px;
+    font-weight: bold;
+    color: var(--text-main);
+    line-height: 1;
+}
+
+.info-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.meanings {
+    font-size: 22px;
+    font-weight: bold;
+    color: var(--text-main);
+    line-height: 1.2;
+    margin-bottom: 5px;
+}
+
+.reading-line {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.kun-badge {
+    background-color: #16a34a;
+    color: #fff;
+    font-size: 10px;
+    letter-spacing: 1px;
+    padding: 3px 8px;
+    border-radius: 6px;
+}
+
+.on-badge {
+    background-color: #9333ea;
+    color: #fff;
+    font-size: 10px;
+    letter-spacing: 1px;
+    padding: 3px 8px;
+    border-radius: 6px;
+}
+
+.reading-text {
+    font-size: 16px;
+    color: var(--text-main);
+}
+
+.tech-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 15px;
+    background-color: var(--bg-tech);
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+}
+
+.section-title {
+    font-size: 11px;
+    font-weight: bold;
+    color: var(--text-sub);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+
+.tech-val {
+    font-size: 18px;
+    color: var(--text-main);
+    letter-spacing: 2px;
+}
+
+.illustration-box {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background-color: var(--bg-illus);
+    padding: 15px 20px;
+    border-radius: 8px;
+    border-left: 4px solid #f59e0b;
+    margin-bottom: 35px;
+}
+
+.illus-icon {
+    font-size: 20px;
+}
+
+.illus-text {
+    font-size: 13px;
+    color: var(--text-main);
+    line-height: 1.4;
+}
+
+/* COMPOUND WORDS */
+.compounds-container {
+    margin-top: 10px;
+}
+
+.compounds-container .section-title {
+    margin-bottom: 15px;
+}
+
+.compound-item {
+    display: grid;
+    grid-template-columns: 80px 1fr 1fr 1fr;
+    grid-template-areas:
+        "k rd en pt"
+        "k st st st";
+    gap: 6px 15px;
+    padding: 15px 0;
+    border-bottom: 1px solid var(--border);
+    align-items: center;
+}
+
+.compound-item:last-child {
+    border-bottom: none;
+}
+
+.cw-kanji {
+    grid-area: k;
+    font-size: 24px;
+    color: var(--accent);
+    font-weight: bold;
+    align-self: start;
+}
+
+.cw-kanji ruby {
+    ruby-position: under;
+    -webkit-ruby-position: after;
+}
+
+.cw-kanji rt {
+    font-size: 9px;
+    color: var(--text-sub);
+    transform: translateY(2px);
+}
+
+.cw-reading {
+    grid-area: rd;
+    font-size: 14px;
+    color: var(--text-main);
+}
+
+.cw-en {
+    grid-area: en;
+    font-size: 14px;
+    color: var(--text-main);
+    font-weight: bold;
+}
+
+.cw-pt {
+    grid-area: pt;
+    font-size: 14px;
+    color: var(--text-muted);
+    font-style: italic;
+}
+
+.cw-stroke {
+    grid-area: st;
+    text-align: left !important;
+}
+
+.cw-stroke img {
+    max-height: 35px;
+    filter: var(--img-filter);
+    margin-top: 5px;
+    display: block;
+}
+
+/* =========================================
+   AJUSTES MOBILE (A RESPONSIVIDADE)
+========================================= */
+@media (max-width: 480px) {
+
+    /* Front */
+    .front-bg {
+        padding: 10px;
+    }
+
+    .grid-topo {
+        grid-template-columns: 1fr;
+    }
+
+    .front-layout .title {
+        font-size: 11px;
+    }
+
+    .front-layout .sub-title {
+        font-size: 10px;
+    }
+
+    .front-layout .full-width {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .front-layout .full-width .rule-txt {
+        text-align: center;
+    }
+
+    .front-layout .rule-card img {
+        max-height: 30px;
+    }
+
+    .front-layout .sub-image-item img {
+        max-height: 30px;
+    }
+
+    /* Back */
+    .study-card {
+        padding: 20px;
+        margin: 10px;
+    }
+
+    .main-block {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .tech-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .compound-item {
+        grid-template-columns: 60px 1fr;
+        grid-template-areas:
+            "k rd"
+            "k en"
+            "k pt"
+            "st st";
+        gap: 8px 10px;
+    }
+
+    .cw-stroke {
+        border-top: 1px dashed var(--border);
+        padding-top: 10px;
+        margin-top: 5px;
+    }
+}

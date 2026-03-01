@@ -14,7 +14,45 @@ const mockData = {
     '{{StrokeOrder}}': '丨 冂 冋 日',
     '{{Illustration}}': '☀️',
     '{{IllustrationExplanation}}': 'picture of the sun / figura do sol',
-    '{{CompoundWords}}': '<div class="compound-item"><div class="cw-kanji"><ruby>毎日<rt>まいにち</rt></ruby></div><div class="cw-reading">まいにち</div><div class="cw-en">every day</div><div class="cw-pt">todos os dias</div><div class="cw-stroke">traços_img</div></div>'
+    '{{CompoundWords}}': `<div class="compound-item">
+&nbsp; <div class="cw-kanji"><ruby>毎日<rt>まいにち</rt></ruby></div>
+&nbsp; <div class="cw-reading">まいにち</div>
+&nbsp; <div class="cw-en">every day</div>
+&nbsp; <div class="cw-pt">todos os dias</div>
+&nbsp; <div class="cw-stroke"><img src="stroke_mainichi.png"></div>
+</div>
+
+<div class="compound-item">
+&nbsp; <div class="cw-kanji"><ruby>日記<rt>にっき</rt></ruby></div>
+&nbsp; <div class="cw-reading">にっき</div>
+&nbsp; <div class="cw-en">diary</div>
+&nbsp; <div class="cw-pt">diário</div>
+&nbsp; <div class="cw-stroke"><img src="stroke_nikki.png"></div>
+</div>
+
+<div class="compound-item">
+&nbsp; <div class="cw-kanji"><ruby>休日<rt>きゅうじつ</rt></ruby></div>
+&nbsp; <div class="cw-reading">きゅうじつ</div>
+&nbsp; <div class="cw-en">holiday</div>
+&nbsp; <div class="cw-pt">feriado</div>
+&nbsp; <div class="cw-stroke"><img src="stroke_kyuujitsu.png"></div>
+</div>
+
+<div class="compound-item">
+&nbsp; <div class="cw-kanji"><ruby>日本<rt>にほん</rt></ruby></div>
+&nbsp; <div class="cw-reading">にほん</div>
+&nbsp; <div class="cw-en">Japan</div>
+&nbsp; <div class="cw-pt">Japão</div>
+&nbsp; <div class="cw-stroke"><img src="stroke_nihon.png"></div>
+</div>
+
+<div class="compound-item">
+&nbsp; <div class="cw-kanji"><ruby>本日<rt>ほんじつ</rt></ruby></div>
+&nbsp; <div class="cw-reading">ほんじつ</div>
+&nbsp; <div class="cw-en">today</div>
+&nbsp; <div class="cw-pt">hoje (formal)</div>
+&nbsp; <div class="cw-stroke"><img src="stroke_honjitsu.png"></div>
+</div>`
 };
 
 // Função para substituir as chaves {{ }} pelos dados falsos
