@@ -1,0 +1,21 @@
+# Arquivos de Sistema (Windows/Mac/Linux)
+.DS_Store
+Thumbs.db
+*~
+.*.swp
+
+# Pastas de IDEs (Antigravity, VS Code, etc)
+.vscode/
+.idea/
+.antigravity/
+*.suo
+*.sln
+
+# Arquivos do Live Server 
+.live-server/
+
+# Logs e dependências (se usar Node/NPM no futuro)
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+node_modules/
