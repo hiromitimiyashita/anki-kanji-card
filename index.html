@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anki Live Preview</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Estilos apenas para o Simulador (não vão para o Anki) */
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background: #2f2f31;
+        }
+
+        #anki-wrapper {
+            flex: 1;
+            padding-bottom: 80px;
+        }
+
+        .anki-controls {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 12px 24px;
+            background: #38bdf8;
+            color: #000;
+            font-weight: bold;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            z-index: 9999;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+        }
+
+        .anki-controls:hover {
+            background: #0ea5e9;
+        }
+    </style>
+</head>
+
+<body class="nightMode">
+    <div id="anki-wrapper">
+    </div>
+
+    <button class="anki-controls" id="flip-btn">Mostrar Resposta</button>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
