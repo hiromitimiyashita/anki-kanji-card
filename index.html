@@ -18,14 +18,20 @@
 
         #anki-wrapper {
             flex: 1;
-            padding-bottom: 80px;
+            padding-bottom: 150px;
         }
 
-        .anki-controls {
+        .controls-container {
             position: fixed;
             bottom: 20px;
             left: 50%;
             transform: translateX(-50%);
+            display: flex;
+            gap: 15px;
+            z-index: 9999;
+        }
+
+        .anki-btn {
             padding: 12px 24px;
             background: #38bdf8;
             color: #000;
@@ -33,12 +39,24 @@
             border: none;
             border-radius: 8px;
             cursor: pointer;
-            z-index: 9999;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+            transition: background 0.2s ease, transform 0.1s ease;
         }
 
-        .anki-controls:hover {
+        .anki-btn:hover {
             background: #0ea5e9;
+        }
+
+        .anki-btn:active {
+            transform: scale(0.96);
+        }
+
+        .theme-btn {
+            background: #f59e0b;
+        }
+
+        .theme-btn:hover {
+            background: #d97706;
         }
     </style>
 </head>
@@ -47,9 +65,23 @@
     <div id="anki-wrapper">
     </div>
 
-    <button class="anki-controls" id="flip-btn">Mostrar Resposta</button>
+    <div class="controls-container">
+        <button class="anki-btn" id="flip-btn">Mostrar Resposta</button>
+        <button class="anki-btn theme-btn" id="theme-btn">Modo Claro ☀️</button>
+    </div>
 
     <script src="app.js"></script>
+    <script>
+        const themeBtn = document.getElementById('theme-btn');
+        themeBtn.addEventListener('click', () => {
+            const body = document.body;
+            body.classList.toggle('nightMode');
+            themeBtn.textContent = body.classList.contains('nightMode') ? 'Modo Claro ☀️' : 'Modo Escuro 🌙';
+        });
+
+        // Configura o texto inicial correto
+        themeBtn.textContent = document.body.classList.contains('nightMode') ? 'Modo Claro ☀️' : 'Modo Escuro 🌙';
+    </script>
 </body>
 
 </html>

@@ -4,11 +4,11 @@
 :root {
     /* LIGHT MODE (Padrão) */
     --bg-body: #f1f5f9;
-    --bg-front-card: rgba(255, 255, 255, 0.90);
-    /* Leve transparência pro front */
+    --bg-glass-card: rgba(255, 255, 255, 0.85);
+    /* Leve transparência pro front e back container */
     --bg-solid: #ffffff;
-    --bg-tech: #f8fafc;
-    --bg-illus: #fffbeb;
+    --bg-tech: rgba(248, 250, 252, 0.75);
+    --bg-illus: rgba(255, 251, 235, 0.75);
     --text-main: #0f172a;
     --text-desc: #334155;
     --text-sub: #64748b;
@@ -22,14 +22,31 @@
     /* Inverte as linhas brancas do GIMP pra ficarem pretas */
 }
 
+@font-face {
+    font-family: 'KanjiStrokeOrders';
+    src: url('_KanjiStrokeOrders.ttf') format('truetype');
+}
+
+.stroke-diagram {
+    font-family: 'KanjiStrokeOrders', sans-serif;
+    font-size: 150px !important;
+    /* Precisa ser grande para ler os numerozinhos */
+    color: var(--text-main);
+    line-height: 1;
+}
+
+.compound-item .stroke-diagram {
+    font-size: 90px !important;
+}
+
 .nightMode,
 .night_mode {
     /* DARK MODE (Anki Nativo) */
     --bg-body: #0f1117;
-    --bg-front-card: rgba(30, 33, 43, 0.90);
+    --bg-glass-card: rgba(30, 33, 43, 0.85);
     --bg-solid: #1e212b;
-    --bg-tech: #171923;
-    --bg-illus: #242836;
+    --bg-tech: rgba(23, 25, 35, 0.75);
+    --bg-illus: rgba(36, 40, 54, 0.75);
     --text-main: #e2e8f0;
     --text-desc: #cbd5e1;
     --text-sub: #64748b;
@@ -58,7 +75,7 @@
 .sub-label,
 .pt-sub,
 .pt-inline {
-    font-size: 8.5px;
+    font-size: 11px;
     color: var(--text-muted);
     font-weight: normal;
     display: block;
@@ -68,16 +85,17 @@
 /* =========================================
    FRONT CONTAINER (FUNDO E LARGURA 1270PX)
 ========================================= */
-.front-bg {
+.page-bg {
     /* IMAGEM DE FUNDO AQUI */
-    background-image: url('_fundo_front.jpg');
+    background-image: url('_fundo_front3.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
     min-height: 100vh;
     display: flex;
     justify-content: center;
-    padding: 15px;
+    padding: 15px 15px 120px 15px;
+    /* Added 120px padding-bottom to clear fixed buttons */
     /* Evita colar nas bordas no mobile */
     box-sizing: border-box;
 }
@@ -93,27 +111,95 @@
 }
 
 .info-section {
-    background: var(--bg-front-card);
-    border-radius: 12px;
-    padding: 15px;
+    background: var(--bg-glass-card);
+    border-radius: 11px;
     border: 1px solid var(--border);
     backdrop-filter: blur(8px);
-    /* Efeito bonito por cima da imagem */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    /* Mantém os filhos dentro do raio arredondado */
 }
 
+/* Fallback/cleanup para componentes que ainda usarem section-header */
 .section-header {
     margin-bottom: 10px;
 }
 
+/* ESTILOS DO COMPONENTE EXPANSIVO (DETAILS/SUMMARY) */
+.section-summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    cursor: pointer;
+    list-style: none;
+    /* Remove seta padrão em novos navegadores */
+    user-select: none;
+    transition: background 0.2s ease;
+}
+
+.section-summary::-webkit-details-marker {
+    display: none;
+    /* Remove seta padrão no Safari/Anki */
+}
+
+.section-summary:hover {
+    background: rgba(120, 120, 120, 0.08);
+}
+
+.summary-titles {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.expand-icon-css {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-right: 2px solid currentColor;
+    border-bottom: 2px solid currentColor;
+    transform: rotate(45deg);
+    margin-bottom: 4px;
+    color: var(--text-sub);
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), color 0.3s ease;
+}
+
+details[open] .expand-icon-css {
+    transform: rotate(225deg);
+    margin-bottom: -2px;
+    color: var(--accent);
+}
+
+.section-content {
+    padding: 0 20px 20px 20px;
+}
+
+details[open] .section-content {
+    animation: slideDown 0.3s ease-out forwards;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 .title {
-    font-size: 13px;
+    font-size: 14px;
     font-weight: bold;
     color: var(--accent);
     text-transform: uppercase;
 }
 
 .sub-title {
-    font-size: 11px;
+    font-size: 13px;
     color: var(--text-sub);
 }
 
@@ -131,23 +217,36 @@
 
 .grid-topo {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 15px;
 }
 
 .item {
-    font-size: 10px;
+    font-size: 11px;
     color: var(--text-desc);
-    line-height: 1.3;
+    line-height: 1.4;
+    background: rgba(120, 120, 120, 0.05);
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.item:hover {
+    transform: translateY(-2px);
+    background: rgba(120, 120, 120, 0.08);
 }
 
 .item strong {
-    color: var(--text-main);
+    display: block;
+    font-size: 13px;
+    color: var(--accent);
+    margin-bottom: 5px;
 }
 
 .sub {
     display: block;
-    font-size: 9px;
+    font-size: 11px;
     color: var(--text-sub);
     margin-top: 2px;
 }
@@ -160,58 +259,34 @@
     padding: 20px;
 }
 
+.kanji-box {
+    background-color: var(--bg-glass-card);
+    border-radius: 36px;
+    padding: 40px 80px;
+    border: 1px solid var(--border);
+    backdrop-filter: blur(12px);
+    box-shadow: var(--shadow), inset 0 1px 1px rgba(255, 255, 255, 0.15);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.kanji-box:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15), inset 0 1px 1px rgba(255, 255, 255, 0.15);
+}
+
 .kanji-huge {
     font-size: clamp(120px, 30vw, 220px);
     font-weight: bold;
     color: var(--text-main);
     text-shadow: 0 0 40px rgba(56, 189, 248, 0.2);
+    line-height: 1;
 }
 
-.rules-flex {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    justify-content: center;
-}
-
-.rule-card {
-    flex: 1 1 90px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.rule-card img {
-    max-height: 35px;
-    margin-bottom: 5px;
-    filter: var(--img-filter);
-    display: block;
-}
-
-.rule-txt {
-    font-size: 10px;
-    color: var(--text-desc);
-}
-
-.full-width {
-    flex: 1 1 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
-    border-top: 1px dashed var(--border);
-    padding-top: 10px;
-}
-
-.full-width img {
-    margin-bottom: 0;
-}
-
-.full-width .rule-txt {
-    text-align: left;
-}
-
+/* EXTRAS PARA IMAGENS DENTRO DOS CARDS (Regra 4) */
 .sub-images-flex {
     display: flex;
     gap: 20px;
@@ -227,23 +302,30 @@
 }
 
 .sub-image-item .illus-icon {
-    font-size: 10px;
+    font-size: 11px;
+    font-weight: bold;
     color: var(--text-desc);
-    margin-bottom: 4px;
+    margin-bottom: 6px;
 }
 
 .sub-image-item img {
     margin: 0;
     max-height: 40px;
+    filter: var(--img-filter);
 }
+
 
 /* =========================================
    BACK (VERSO)
 ========================================= */
 .study-card {
     max-width: 550px;
+    width: 100%;
     margin: 20px auto;
-    background-color: var(--bg-solid);
+    height: fit-content;
+    align-self: flex-start;
+    background-color: var(--bg-glass-card);
+    backdrop-filter: blur(8px);
     border-radius: 16px;
     padding: 30px;
     box-sizing: border-box;
@@ -420,8 +502,10 @@
 .cw-kanji rt {
     font-size: 9px;
     color: var(--text-sub);
+    padding-top: 5px;
     transform: translateY(2px);
 }
+
 
 .cw-reading {
     grid-area: rd;
@@ -449,11 +533,13 @@
 }
 
 .cw-stroke img {
-    max-height: 35px;
-    filter: var(--img-filter);
+    max-height: 150px;
     margin-top: 5px;
-    display: block;
+    margin-right: 8px;
+    display: inline-block;
 }
+
+
 
 /* =========================================
    AJUSTES MOBILE (A RESPONSIVIDADE)
@@ -461,7 +547,7 @@
 @media (max-width: 480px) {
 
     /* Front */
-    .front-bg {
+    .page-bg {
         padding: 10px;
     }
 
@@ -477,21 +563,9 @@
         font-size: 10px;
     }
 
-    .front-layout .full-width {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .front-layout .full-width .rule-txt {
-        text-align: center;
-    }
-
-    .front-layout .rule-card img {
-        max-height: 30px;
-    }
-
-    .front-layout .sub-image-item img {
-        max-height: 30px;
+    .kanji-box {
+        padding: 20px 40px;
+        border-radius: 24px;
     }
 
     /* Back */

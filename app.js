@@ -11,7 +11,7 @@ const mockData = {
     '{{KunReading}}': 'ひ / -び / -か',
     '{{OnReading}}': 'ニチ / ジツ',
     '{{OldForm}}': '☉',
-    '{{StrokeOrder}}': '丨 冂 冋 日',
+    '{{StrokeOrder}}': '日',
     '{{Illustration}}': '☀️',
     '{{IllustrationExplanation}}': 'picture of the sun / figura do sol',
     '{{CompoundWords}}': `<div class="compound-item">
@@ -19,7 +19,7 @@ const mockData = {
 &nbsp; <div class="cw-reading">まいにち</div>
 &nbsp; <div class="cw-en">every day</div>
 &nbsp; <div class="cw-pt">todos os dias</div>
-&nbsp; <div class="cw-stroke"><img src="stroke_mainichi.png"></div>
+&nbsp; <div class="cw-stroke"><img src="_kanji_毎_stroke_order_animation_transparent.gif"><img src="_kanji_日_stroke_order_animation_transparent.gif"></div>
 </div>
 
 <div class="compound-item">
@@ -27,7 +27,7 @@ const mockData = {
 &nbsp; <div class="cw-reading">にっき</div>
 &nbsp; <div class="cw-en">diary</div>
 &nbsp; <div class="cw-pt">diário</div>
-&nbsp; <div class="cw-stroke"><img src="stroke_nikki.png"></div>
+&nbsp; <div class="cw-stroke stroke-diagram">日記</div>
 </div>
 
 <div class="compound-item">
@@ -35,7 +35,7 @@ const mockData = {
 &nbsp; <div class="cw-reading">きゅうじつ</div>
 &nbsp; <div class="cw-en">holiday</div>
 &nbsp; <div class="cw-pt">feriado</div>
-&nbsp; <div class="cw-stroke"><img src="stroke_kyuujitsu.png"></div>
+&nbsp; <div class="cw-stroke stroke-diagram">休日</div>
 </div>
 
 <div class="compound-item">
@@ -43,7 +43,7 @@ const mockData = {
 &nbsp; <div class="cw-reading">にほん</div>
 &nbsp; <div class="cw-en">Japan</div>
 &nbsp; <div class="cw-pt">Japão</div>
-&nbsp; <div class="cw-stroke"><img src="stroke_nihon.png"></div>
+&nbsp; <div class="cw-stroke stroke-diagram">日本</div>
 </div>
 
 <div class="compound-item">
@@ -51,7 +51,7 @@ const mockData = {
 &nbsp; <div class="cw-reading">ほんじつ</div>
 &nbsp; <div class="cw-en">today</div>
 &nbsp; <div class="cw-pt">hoje (formal)</div>
-&nbsp; <div class="cw-stroke"><img src="stroke_honjitsu.png"></div>
+&nbsp; <div class="cw-stroke stroke-diagram">本日</div>
 </div>`
 };
 
@@ -69,7 +69,8 @@ async function renderCard() {
     const fileToLoad = isShowingFront ? 'front.html' : 'back.html';
 
     try {
-        const response = await fetch(fileToLoad);
+        // Adicionado cache-busting (?v=timestamp) para evitar que o navegador guarde versões velhas no cache
+        const response = await fetch(`${fileToLoad}?v=${new Date().getTime()}`);
         const html = await response.text();
         wrapper.innerHTML = parseAnkiTags(html);
 
