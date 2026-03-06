@@ -1,64 +1,62 @@
 <div class="page-bg">
-    <div class="study-card">
-        <div class="top-bar">
-            <div class="badge serial">#{{SerialNumber}}</div>
-            <div class="badge strokes" style="display: flex; align-items: center; gap: 4px;">
-                {{StrokeCount}} strokes
-                <span
-                    style="font-size: 9px; color: var(--text-muted); font-weight: normal; text-transform: lowercase;">/
-                    traços</span>
+    <div class="back-layout">
+        <!-- Main Panel: Info -->
+        <div class="panel main-panel">
+            <div class="top-bar">
+                <div class="badge serial">#{{SerialNumber}}</div>
+                <div class="badge strokes" style="display: flex; align-items: center; gap: 4px;">
+                    {{StrokeCount}} strokes
+                    <span style="font-size: 9px; color: var(--text-muted); font-weight: normal; text-transform: lowercase;">/ traços</span>
+                </div>
             </div>
-        </div>
 
-        <div class="main-block">
-            <div class="kanji-large">{{Kanji}}</div>
+            <div class="kanji-large-wrap">
+                <div class="kanji-large">{{Kanji}}</div>
+            </div>
+
             <div class="info-group">
                 <div class="meanings">{{Meanings}}</div>
                 <div class="reading-line">
                     <span class="badge kun-badge">KUN</span>
-                    <span class="reading-text">{{KunReading}} <span style="font-size: 10px; color: var(--text-sub);">/
-                            leitura jap.</span></span>
+                    <span class="reading-text">{{KunReading}} <span style="font-size: 10px; color: var(--text-sub);">/ leitura jap.</span></span>
                 </div>
                 <div class="reading-line">
                     <span class="badge on-badge">ON</span>
-                    <span class="reading-text">{{OnReading}} <span style="font-size: 10px; color: var(--text-sub);">/
-                            leitura chin.</span></span>
+                    <span class="reading-text">{{OnReading}} <span style="font-size: 10px; color: var(--text-sub);">/ leitura chin.</span></span>
                 </div>
             </div>
         </div>
 
-        <div class="tech-grid">
-            <div class="tech-box">
-                <div class="section-title">
-                    OLD FORM <span
-                        style="font-size: 9px; color: var(--text-sub); font-weight: normal; text-transform: lowercase; letter-spacing: normal;">/
-                        forma antiga</span>
+        <!-- Right Panel: Details -->
+        <div class="details-column">
+            <!-- Tech Grid -->
+            <div class="tech-grid">
+                <div class="panel tech-box">
+                    <div class="section-title">
+                        OLD FORM <span style="font-size: 9px; color: var(--text-sub); font-weight: normal; text-transform: lowercase; letter-spacing: normal;">/ forma antiga</span>
+                    </div>
+                    <div class="tech-val">{{OldForm}}</div>
                 </div>
-                <div class="tech-val">{{OldForm}}</div>
-            </div>
-            <div class="tech-box">
-                <div class="section-title">
-                    STROKE ORDER <span
-                        style="font-size: 9px; color: var(--text-sub); font-weight: normal; text-transform: lowercase; letter-spacing: normal;">/
-                        ordem dos traços</span>
+                <div class="panel tech-box">
+                    <div class="section-title">
+                        STROKE ORDER <span style="font-size: 9px; color: var(--text-sub); font-weight: normal; text-transform: lowercase; letter-spacing: normal;">/ ordem dos traços</span>
+                    </div>
+                    <div class="tech-val stroke-diagram">{{StrokeOrder}}</div>
                 </div>
-                <div class="tech-val stroke-diagram">{{StrokeOrder}}</div>
             </div>
-        </div>
 
-        <div class="illustration-box">
-            <span class="illus-icon">{{Illustration}}</span>
-            <span class="illus-text">{{IllustrationExplanation}}</span>
-        </div>
-
-        <div class="compounds-container">
-            <div class="section-title">
-                COMPOUND WORDS <span
-                    style="font-size: 9px; color: var(--text-sub); font-weight: normal; text-transform: lowercase; letter-spacing: normal;">/
-                    palavras compostas</span>
+            <div class="panel illustration-box">
+                <span class="illus-icon">{{Illustration}}</span>
+                <span class="illus-text">{{IllustrationExplanation}}</span>
             </div>
-            <div class="compound-list">
-                {{CompoundWords}}
+
+            <div class="panel compounds-container">
+                <div class="section-title" style="margin-bottom: 15px;">
+                    COMPOUND WORDS <span style="font-size: 9px; color: var(--text-sub); font-weight: normal; text-transform: lowercase; letter-spacing: normal;">/ palavras compostas</span>
+                </div>
+                <div class="compound-list">
+                    {{CompoundWords}}
+                </div>
             </div>
         </div>
     </div>
