@@ -236,19 +236,23 @@ details[open] .section-content {
 }
 
 .title {
-    font-size: 14px;
+    font-size: 12px;
     font-weight: bold;
-    color: var(--accent);
+    color: var(--text-sub);
     text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .sub-title {
-    font-size: 13px;
+    font-size: 12px;
     color: var(--text-sub);
+    font-weight: normal;
+    text-transform: lowercase;
+    letter-spacing: normal;
 }
 
 .main-desc {
-    font-size: 11px;
+    font-size: 12px;
     color: var(--text-desc);
     margin-top: 5px;
     margin-bottom: 15px;
@@ -266,7 +270,7 @@ details[open] .section-content {
 }
 
 .item {
-    font-size: 11px;
+    font-size: 12px;
     color: var(--text-desc);
     line-height: 1.4;
     background: rgba(120, 120, 120, 0.05);
@@ -290,7 +294,7 @@ details[open] .section-content {
 
 .sub {
     display: block;
-    font-size: 11px;
+    font-size: 12px;
     color: var(--text-sub);
     margin-top: 2px;
 }
@@ -345,7 +349,7 @@ details[open] .section-content {
 }
 
 .sub-image-item .illus-icon {
-    font-size: 11px;
+    font-size: 12px;
     font-weight: bold;
     color: var(--text-desc);
     margin-bottom: 6px;
@@ -468,7 +472,7 @@ details[open] .section-content {
 .kun-badge {
     background-color: #16a34a;
     color: #fff;
-    font-size: 10px;
+    font-size: 12px;
     letter-spacing: 1px;
     padding: 3px 8px;
     border-radius: 6px;
@@ -477,7 +481,7 @@ details[open] .section-content {
 .on-badge {
     background-color: #9333ea;
     color: #fff;
-    font-size: 10px;
+    font-size: 12px;
     letter-spacing: 1px;
     padding: 3px 8px;
     border-radius: 6px;
