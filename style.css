@@ -141,7 +141,7 @@
     width: 100%;
     height: 100%;
     z-index: -1;
-    background-image: url('_background.jpg');
+    background-image: url('_jlptcg_background.jpg');
     background-size: cover;
     background-position: center;
 }
@@ -627,7 +627,7 @@ details[open] .section-content {
 
     /* Background Override specifically for Tablet */
     .page-bg::before {
-        background-image: url('_background_tablet.jpg');
+        background-image: url('_jlptcg_background_tablet.jpg');
         /* Wallpaper para iPad/Tablet Horizontal Vertical */
     }
 
@@ -702,7 +702,7 @@ details[open] .section-content {
     }
 
     .page-bg::before {
-        background-image: url('_background_mobile.jpg');
+        background-image: url('_jlptcg_background_mobile.jpg');
         /* Novo wallpaper apenas para mobile */
     }
 
