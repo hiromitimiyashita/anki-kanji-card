@@ -634,8 +634,8 @@ details[open] .section-content {
         padding: 10px;
         background-image: url('_background_mobile.jpg');
         /* Novo wallpaper apenas para mobile */
-        background-attachment: scroll;
-        /* Scroll é geralmente melhor em mobile pra evitar lag no fixed */
+        background-attachment: fixed;
+        /* Fundo fixado no dispositivo móvel para não rolar com o card */
     }
 
     .grid-topo {
