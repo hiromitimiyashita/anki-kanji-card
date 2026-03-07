@@ -83,6 +83,18 @@
 /* =========================================
    BASE
 ========================================= */
+.main-stroke-box {
+    border: 2px dashed rgba(203, 213, 225, 0.4);
+    border-radius: 12px;
+    padding: 10px 20px;
+    display: inline-block;
+}
+
+.nightMode .main-stroke-box,
+.night_mode .main-stroke-box {
+    border: 2px dashed rgba(148, 163, 184, 0.6);
+}
+
 .card {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     background-color: var(--bg-body) !important;
