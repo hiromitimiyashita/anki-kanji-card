@@ -14,12 +14,13 @@ const mockData = {
     '{{StrokeOrder}}': '日',
     '{{Illustration}}': '☀️',
     '{{IllustrationExplanation}}': 'picture of the sun / figura do sol',
-    '{{CompoundWords}}': `<div class="compound-item">
+    '{{CompoundWords}}': `
+<div class="compound-item">
 &nbsp; <div class="cw-kanji"><ruby>毎日<rt>まいにち</rt></ruby></div>
 &nbsp; <div class="cw-reading">まいにち</div>
 &nbsp; <div class="cw-en">every day</div>
 &nbsp; <div class="cw-pt">todos os dias</div>
-&nbsp; <div class="cw-stroke"><img src="_kanji_毎_stroke_order_animation_transparent.gif"><img src="_kanji_日_stroke_order_animation_transparent.gif"></div>
+&nbsp; <div class="cw-stroke stroke-diagram"><span>毎</span><span>日</span></div>
 </div>
 
 <div class="compound-item">
@@ -27,7 +28,7 @@ const mockData = {
 &nbsp; <div class="cw-reading">にっき</div>
 &nbsp; <div class="cw-en">diary</div>
 &nbsp; <div class="cw-pt">diário</div>
-&nbsp; <div class="cw-stroke stroke-diagram">日記</div>
+&nbsp; <div class="cw-stroke stroke-diagram"><span>日</span><span>記</span></div>
 </div>
 
 <div class="compound-item">
@@ -35,7 +36,7 @@ const mockData = {
 &nbsp; <div class="cw-reading">きゅうじつ</div>
 &nbsp; <div class="cw-en">holiday</div>
 &nbsp; <div class="cw-pt">feriado</div>
-&nbsp; <div class="cw-stroke stroke-diagram">休日</div>
+&nbsp; <div class="cw-stroke stroke-diagram"><span>休</span><span>日</span></div>
 </div>
 
 <div class="compound-item">
@@ -43,7 +44,7 @@ const mockData = {
 &nbsp; <div class="cw-reading">にほん</div>
 &nbsp; <div class="cw-en">Japan</div>
 &nbsp; <div class="cw-pt">Japão</div>
-&nbsp; <div class="cw-stroke stroke-diagram">日本</div>
+&nbsp; <div class="cw-stroke stroke-diagram"><span>日</span><span>本</span></div>
 </div>
 
 <div class="compound-item">
@@ -51,7 +52,7 @@ const mockData = {
 &nbsp; <div class="cw-reading">ほんじつ</div>
 &nbsp; <div class="cw-en">today</div>
 &nbsp; <div class="cw-pt">hoje (formal)</div>
-&nbsp; <div class="cw-stroke stroke-diagram">本日</div>
+&nbsp; <div class="cw-stroke stroke-diagram"><span>本</span><span>日</span></div>
 </div>`
 };
 

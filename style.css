@@ -38,6 +38,12 @@
 
 .compound-item .stroke-diagram {
     font-size: 120px !important;
+    display: inline-flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.compound-item .stroke-diagram span {
     border: 2px dashed var(--border);
     border-radius: 8px;
     padding: 5px;
