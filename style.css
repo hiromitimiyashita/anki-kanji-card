@@ -14,7 +14,8 @@
     --text-sub: #64748b;
     --text-muted: #94a3b8;
     --accent: #0284c7;
-    --border: #cbd5e1;
+    --border: #475569;
+    /* Cor de borda de container antiga do Dark Mode, agora no Light Mode */
     --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     --badge-bg: #e0f2fe;
     --badge-text: #0284c7;
@@ -44,7 +45,7 @@
 }
 
 .compound-item .stroke-diagram span {
-    border: 2px dashed rgba(148, 163, 184, 0.8);
+    border: 2px dashed rgba(148, 163, 184, 0.6);
     /* Cor fixa mais visível pro Light Mode */
     border-radius: 8px;
     padding: 5px;
@@ -65,8 +66,8 @@
     --text-sub: #64748b;
     --text-muted: #94a3b8;
     --accent: #38bdf8;
-    --border: #475569;
-    /* Tornando a borda mais clara no modo escuro para dar destaque aos Kanjis */
+    --border: #cbd5e1;
+    /* Cor de borda de container antiga do Light Mode, agora no Dark Mode */
     --shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     --badge-bg: #0d2838;
     --badge-text: #38bdf8;
@@ -77,14 +78,14 @@
 /* Forçando o destaque absurdo dos traços compostos no Dark Mode */
 .nightMode .compound-item .stroke-diagram span,
 .night_mode .compound-item .stroke-diagram span {
-    border: 2px dashed rgba(148, 163, 184, 0.6);
+    border: 2px dashed rgba(203, 213, 225, 0.4);
 }
 
 /* =========================================
    BASE
 ========================================= */
 .main-stroke-box {
-    border: 2px dashed rgba(148, 163, 184, 0.8);
+    border: 2px dashed rgba(148, 163, 184, 0.6);
     border-radius: 12px;
     padding: 10px 20px;
     display: inline-block;
@@ -92,7 +93,7 @@
 
 .nightMode .main-stroke-box,
 .night_mode .main-stroke-box {
-    border: 2px dashed rgba(148, 163, 184, 0.6);
+    border: 2px dashed rgba(203, 213, 225, 0.4);
 }
 
 .card {
@@ -119,7 +120,7 @@
 ========================================= */
 .page-bg {
     /* IMAGEM DE FUNDO AQUI */
-    background-image: url('_fundo_front3.jpg');
+    background-image: url('_fundo_front1.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
