@@ -37,7 +37,11 @@
 }
 
 .compound-item .stroke-diagram {
-    font-size: 90px !important;
+    font-size: 120px !important;
+    border: 2px dashed var(--border);
+    border-radius: 8px;
+    padding: 5px;
+    display: inline-block;
 }
 
 .nightMode,
