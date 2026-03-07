@@ -629,9 +629,13 @@ details[open] .section-content {
 
 @media (max-width: 480px) {
 
-    /* Front */
+    /* Front & Background Mobile Override */
     .page-bg {
         padding: 10px;
+        background-image: url('_background_mobile.jpg');
+        /* Novo wallpaper apenas para mobile */
+        background-attachment: scroll;
+        /* Scroll é geralmente melhor em mobile pra evitar lag no fixed */
     }
 
     .grid-topo {
