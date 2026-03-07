@@ -44,8 +44,8 @@
 }
 
 .compound-item .stroke-diagram span {
-    border: 2px dashed rgba(203, 213, 225, 0.4);
-    /* Cor fixa opaca pra destacar melhor que o border normal claro*/
+    border: 2px dashed rgba(148, 163, 184, 0.8);
+    /* Cor fixa mais visível pro Light Mode */
     border-radius: 8px;
     padding: 5px;
     margin-top: 10px;
@@ -84,7 +84,7 @@
    BASE
 ========================================= */
 .main-stroke-box {
-    border: 2px dashed rgba(203, 213, 225, 0.4);
+    border: 2px dashed rgba(148, 163, 184, 0.8);
     border-radius: 12px;
     padding: 10px 20px;
     display: inline-block;
