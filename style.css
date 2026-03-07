@@ -619,6 +619,21 @@ details[open] .section-content {
         background-attachment: fixed;
     }
 
+    /* Tablet: Mantém 2 colunas, mas diminui a proporção da área secundária */
+    .back-layout {
+        grid-template-columns: 1fr 1.5fr;
+        gap: 20px;
+    }
+
+    .main-column {
+        position: sticky;
+        /* Mantém sticky, pois ainda há rolamento lateral da coluna 2 */
+        top: 20px;
+    }
+}
+
+/* Celulares Grandes / Tablets Menores (Portrait) */
+@media (max-width: 768px) {
     .back-layout {
         grid-template-columns: 1fr;
         gap: 20px;
