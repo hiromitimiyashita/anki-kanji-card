@@ -119,11 +119,7 @@
    FRONT CONTAINER (FUNDO E LARGURA 1270PX)
 ========================================= */
 .page-bg {
-    /* IMAGEM DE FUNDO AQUI */
-    background-image: url('_background.jpg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
+    /* CONTEÚDO E POSICIONAMENTO DA PÁGINA */
     min-height: 100vh;
     display: flex;
     justify-content: center;
@@ -131,6 +127,23 @@
     /* Added 120px padding-bottom to clear fixed buttons */
     /* Evita colar nas bordas no mobile */
     box-sizing: border-box;
+    position: relative;
+    z-index: 1;
+    /* Garante que o conteúdo fique acima do background */
+}
+
+/* IMAGEM DE FUNDO AQUI (usando ::before para corrigir bug de background fixo em mobile) */
+.page-bg::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-image: url('_background.jpg');
+    background-size: cover;
+    background-position: center;
 }
 
 .front-layout {
@@ -613,10 +626,9 @@ details[open] .section-content {
 @media (max-width: 900px) {
 
     /* Background Override specifically for Tablet */
-    .page-bg {
+    .page-bg::before {
         background-image: url('_background_tablet.jpg');
         /* Wallpaper para iPad/Tablet Horizontal Vertical */
-        background-attachment: fixed;
     }
 
     /* Tablet: Mantém 2 colunas, mas diminui a proporção da área secundária */
@@ -687,10 +699,11 @@ details[open] .section-content {
     /* Front & Background Mobile Override */
     .page-bg {
         padding: 10px;
+    }
+
+    .page-bg::before {
         background-image: url('_background_mobile.jpg');
         /* Novo wallpaper apenas para mobile */
-        background-attachment: fixed;
-        /* Fundo fixado no dispositivo móvel para não rolar com o card */
     }
 
     .grid-topo {
