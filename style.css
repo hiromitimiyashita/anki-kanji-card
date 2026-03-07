@@ -632,8 +632,9 @@ details[open] .section-content {
     }
 }
 
-/* Celulares Grandes / Tablets Menores (Portrait) */
-@media (max-width: 768px) {
+/* Intermediário (Tablets e Celulares de tela larga/landscape) 
+   Coloca o Kanji Info e Stroke Order Lado a Lado. O resto embaixo. */
+@media (min-width: 690px) and (max-width: 768px) {
     .back-layout {
         grid-template-columns: 1fr;
         gap: 20px;
@@ -642,6 +643,37 @@ details[open] .section-content {
     .main-column {
         position: relative;
         top: 0;
+        /* Coloca os dois cartões internos lado a lado */
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+
+    /* O kanji deve esticar para preencher bem o espaço */
+    .kanji-large-wrap {
+        height: auto;
+    }
+
+    .tech-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
+/* Celulares (Portrait Estreito - TUDO em coluna única Vertical) */
+@media (max-width: 689px) {
+    .back-layout {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .main-column {
+        position: relative;
+        top: 0;
+        /* Volta o layout interno pra vertical padrão */
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
     }
 
     .tech-grid {
