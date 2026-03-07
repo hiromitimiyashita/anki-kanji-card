@@ -23,14 +23,15 @@
 }
 
 @font-face {
-    font-family: 'KanjiStrokeOrders';
-    src: url('_KanjiStrokeOrders.ttf') format('truetype');
+    font-family: 'KanjiStrokeOrder';
+    src: local('KanjiStrokeOrders'),
+        url('_KanjiStrokeOrders_v4.005.ttf') format('truetype'),
+        url('KanjiStrokeOrders_v4.005.ttf') format('truetype');
 }
 
 .stroke-diagram {
-    font-family: 'KanjiStrokeOrders', sans-serif;
-    font-size: 150px !important;
-    /* Precisa ser grande para ler os numerozinhos */
+    font-family: 'KanjiStrokeOrder', sans-serif;
+    font-size: 200px !important;
     color: var(--text-main);
     line-height: 1;
 }
