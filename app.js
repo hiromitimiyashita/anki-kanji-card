@@ -20,7 +20,7 @@ const mockData = {
 &nbsp; <div class="cw-reading">まいにち</div>
 &nbsp; <div class="cw-en">every day</div>
 &nbsp; <div class="cw-pt">todos os dias</div>
-&nbsp; <div class="cw-stroke stroke-diagram"><span>毎</span><span>日</span></div>
+&nbsp; <div class="cw-stroke stroke-diagram"><span>毎</span><span>日</span><span>毎</span></div>
 </div>
 
 <div class="compound-item">
