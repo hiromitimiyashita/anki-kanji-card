@@ -375,8 +375,8 @@ details[open] .section-content {
     border-radius: 16px;
     padding: 30px;
     box-shadow: var(--shadow);
-    border: 2px solid var(--border);
-    /* Aumentei a espessura da borda dos containers */
+    border: 4px solid var(--border);
+    /* Borda mais grossa para destacar os painéis */
     box-sizing: border-box;
     transition: transform 0.2s ease;
 }
