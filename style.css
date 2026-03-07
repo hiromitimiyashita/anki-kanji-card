@@ -48,6 +48,7 @@
     /* Cor fixa opaca pra destacar melhor que o border normal claro*/
     border-radius: 8px;
     padding: 5px;
+    margin-top: 10px;
     display: inline-block;
 }
 
