@@ -258,7 +258,6 @@ details[open] .section-content {
     border-radius: 36px;
     padding: 40px 80px;
     border: 1px solid var(--border);
-    backdrop-filter: blur(12px);
     box-shadow: var(--shadow), inset 0 1px 1px rgba(255, 255, 255, 0.15);
     display: flex;
     justify-content: center;
@@ -324,7 +323,6 @@ details[open] .section-content {
 
 .panel {
     background-color: var(--bg-glass-card);
-    backdrop-filter: blur(12px);
     border-radius: 16px;
     padding: 30px;
     box-shadow: var(--shadow);
