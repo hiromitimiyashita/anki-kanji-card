@@ -611,6 +611,14 @@ details[open] .section-content {
    AJUSTES MOBILE (A RESPONSIVIDADE)
 ========================================= */
 @media (max-width: 900px) {
+
+    /* Background Override specifically for Tablet */
+    .page-bg {
+        background-image: url('_background_tablet.jpg');
+        /* Wallpaper para iPad/Tablet Horizontal Vertical */
+        background-attachment: fixed;
+    }
+
     .back-layout {
         grid-template-columns: 1fr;
         gap: 20px;
