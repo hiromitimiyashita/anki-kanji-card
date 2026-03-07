@@ -44,7 +44,8 @@
 }
 
 .compound-item .stroke-diagram span {
-    border: 2px dashed var(--border);
+    border: 2px dashed rgba(203, 213, 225, 0.4);
+    /* Cor fixa opaca pra destacar melhor que o border normal claro*/
     border-radius: 8px;
     padding: 5px;
     display: inline-block;
@@ -63,12 +64,19 @@
     --text-sub: #64748b;
     --text-muted: #94a3b8;
     --accent: #38bdf8;
-    --border: #2d313f;
+    --border: #475569;
+    /* Tornando a borda mais clara no modo escuro para dar destaque aos Kanjis */
     --shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     --badge-bg: #0d2838;
     --badge-text: #38bdf8;
     --img-filter: brightness(1.2);
     /* Mantém branco no escuro */
+}
+
+/* Forçando o destaque absurdo dos traços compostos no Dark Mode */
+.nightMode .compound-item .stroke-diagram span,
+.night_mode .compound-item .stroke-diagram span {
+    border: 2px dashed rgba(148, 163, 184, 0.6);
 }
 
 /* =========================================
