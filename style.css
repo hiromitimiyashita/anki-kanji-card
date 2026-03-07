@@ -110,14 +110,7 @@
     margin: 0 auto;
 }
 
-.info-section {
-    background: var(--bg-glass-card);
-    border-radius: 11px;
-    border: 1px solid var(--border);
-    backdrop-filter: blur(8px);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-    /* Mantém os filhos dentro do raio arredondado */
-}
+
 
 /* Fallback/cleanup para componentes que ainda usarem section-header */
 .section-header {
@@ -129,12 +122,12 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 20px;
+    padding: 0 0 15px 0;
     cursor: pointer;
     list-style: none;
     /* Remove seta padrão em novos navegadores */
     user-select: none;
-    transition: background 0.2s ease;
+    transition: opacity 0.2s ease;
 }
 
 .section-summary::-webkit-details-marker {
@@ -143,7 +136,7 @@
 }
 
 .section-summary:hover {
-    background: rgba(120, 120, 120, 0.08);
+    opacity: 0.8;
 }
 
 .summary-titles {
@@ -172,7 +165,8 @@ details[open] .expand-icon-css {
 }
 
 .section-content {
-    padding: 0 20px 20px 20px;
+    padding: 15px 0 0 0;
+    border-top: 1px solid var(--border);
 }
 
 details[open] .section-content {
@@ -568,10 +562,12 @@ details[open] .section-content {
         grid-template-columns: 1fr;
         gap: 20px;
     }
+
     .main-panel {
         position: relative;
         top: 0;
     }
+
     .tech-grid {
         grid-template-columns: 1fr;
         gap: 20px;
@@ -608,7 +604,7 @@ details[open] .section-content {
         margin: 0;
         gap: 15px;
     }
-    
+
     .panel {
         padding: 20px;
         border-radius: 20px;
