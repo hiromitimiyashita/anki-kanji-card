@@ -88,7 +88,12 @@
     border: 2px dashed rgba(148, 163, 184, 0.6);
     border-radius: 12px;
     padding: 10px 20px;
-    display: inline-block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .nightMode .main-stroke-box,
@@ -452,12 +457,25 @@ details[open] .section-content {
     transition: transform 0.2s ease;
 }
 
+.stroke-panel {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.stroke-panel .stroke-diagram {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
 .main-column {
     display: flex;
     flex-direction: column;
     gap: 20px;
     position: sticky;
     top: 20px;
+    height: calc(100vh - 40px);
 }
 
 .info-panel {
@@ -724,6 +742,7 @@ details[open] .section-content {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 20px;
+        height: auto;
     }
 
     /* O kanji deve esticar para preencher bem o espaço */
@@ -758,6 +777,7 @@ details[open] .section-content {
         display: flex;
         flex-direction: column;
         gap: 20px;
+        height: auto;
         /* Cards terão distâncias idênticas em todo o layout */
     }
 
