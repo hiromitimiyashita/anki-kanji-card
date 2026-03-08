@@ -802,8 +802,13 @@ details[open] .section-content {
     }
 
     .panel {
-        padding: 20px;
+        padding: 15px;
         border-radius: 20px;
+    }
+
+    .top-bar {
+        margin-bottom: 15px;
+        padding-bottom: 15px;
     }
 
     .kanji-large {
