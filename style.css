@@ -134,7 +134,8 @@
     /* Previne centralização vertical falsa no verso e reseta a base */
     align-items: flex-start;
 
-    padding: 15px 15px 120px 15px;
+    /* Zera o padding do Top para o card encostar totalmente no teto */
+    padding: 0 15px 120px 15px;
     box-sizing: border-box;
     position: relative;
     z-index: 1;
@@ -684,16 +685,16 @@ details[open] .section-content {
 
     /* Remove padding/margin do topo do Back Card em telas menores */
     .page-bg {
-        padding-top: 5px;
-        /* Minimiza a distancia do topo da página */
+        padding-top: 0;
+        /* Zera a distancia do topo da página no tablet */
     }
 
     /* Tablet: Mantém 2 colunas, mas diminui a proporção da área secundária */
     .back-layout {
         grid-template-columns: 1fr 1.5fr;
         gap: 20px;
-        margin-top: 10px;
-        /* Reduz a folga natural de Desktop (que é 20px) */
+        margin-top: 0;
+        /* Remove a folga natural de Desktop (que é 20px) */
     }
 
     .main-column {
