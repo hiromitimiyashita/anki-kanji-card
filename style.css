@@ -115,21 +115,29 @@
     margin-top: 2px;
 }
 
+/* CSS Reset agressivo para componentes injetados do AnkiWeb */
+#qa,
+.card {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
 /* =========================================
-   FRONT CONTAINER (FUNDO E LARGURA 1270PX)
+   FRONT E BACK CONTAINER (FUNDO GERAL)
 ========================================= */
 .page-bg {
     /* CONTEÚDO E POSICIONAMENTO DA PÁGINA */
     min-height: 100vh;
     display: flex;
     justify-content: center;
+
+    /* Previne centralização vertical falsa no verso e reseta a base */
+    align-items: flex-start;
+
     padding: 15px 15px 120px 15px;
-    /* Added 120px padding-bottom to clear fixed buttons */
-    /* Evita colar nas bordas no mobile */
     box-sizing: border-box;
     position: relative;
     z-index: 1;
-    /* Garante que o conteúdo fique acima do background */
 }
 
 /* IMAGEM DE FUNDO AQUI (usando ::before para corrigir bug de background fixo em mobile) */
