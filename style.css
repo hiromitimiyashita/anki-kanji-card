@@ -437,7 +437,7 @@ details[open] .section-content {
     gap: 15px;
     max-width: 1270px;
     width: 100%;
-    margin: 15px auto;
+    margin: 0 auto;
     align-items: start;
 }
 
@@ -685,7 +685,8 @@ details[open] .section-content {
 
     /* Remove margin/padding issues do Tablet Card e garante espaçamento simétrico */
     .page-bg {
-        padding: 15px;
+        padding: 0 15px 15px 15px;
+        /* Zera o topo */
     }
 
     /* Tablet: Mantém 2 colunas, mas diminui a proporção da área secundária */
@@ -702,7 +703,8 @@ details[open] .section-content {
     .main-column {
         position: sticky;
         /* Mantém sticky, pois ainda há rolamento lateral da coluna 2 */
-        top: 15px;
+        top: 0;
+        /* Cola no topo quando rolar */
         gap: 15px;
     }
 }
@@ -713,6 +715,7 @@ details[open] .section-content {
     .back-layout {
         grid-template-columns: 1fr;
         gap: 15px;
+        margin-top: 0;
     }
 
     .main-column {
@@ -741,10 +744,11 @@ details[open] .section-content {
         grid-template-columns: 1fr;
         gap: 15px;
         /* Harmoniza o gap total */
+        margin-top: 0;
     }
 
     .page-bg {
-        padding: 15px;
+        padding: 0 15px 15px 15px;
     }
 
     .main-column,
@@ -768,7 +772,7 @@ details[open] .section-content {
 
     /* Front & Background Mobile Override */
     .page-bg {
-        padding: 15px;
+        padding: 0 15px 15px 15px;
         /* Zera deficiências e garante a simetria com os cards */
     }
 
