@@ -674,10 +674,18 @@ details[open] .section-content {
         background-image: url('_jlptcg_background_tablet.jpg');
     }
 
+    /* Remove padding/margin do topo do Back Card em telas menores */
+    .page-bg {
+        padding-top: 5px;
+        /* Minimiza a distancia do topo da página */
+    }
+
     /* Tablet: Mantém 2 colunas, mas diminui a proporção da área secundária */
     .back-layout {
         grid-template-columns: 1fr 1.5fr;
         gap: 20px;
+        margin-top: 10px;
+        /* Reduz a folga natural de Desktop (que é 20px) */
     }
 
     .main-column {
@@ -741,7 +749,8 @@ details[open] .section-content {
 
     /* Front & Background Mobile Override */
     .page-bg {
-        padding: 10px;
+        padding: 0 10px 10px 10px;
+        /* Zera o topo para o back grudar em cima */
     }
 
     .page-bg::before {
