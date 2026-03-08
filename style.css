@@ -683,10 +683,9 @@ details[open] .section-content {
         background-image: url('_jlptcg_background_tablet.jpg');
     }
 
-    /* Remove padding/margin do topo do Back Card em telas menores */
+    /* Remove margin/padding issues do Tablet Card e garante espaçamento simétrico */
     .page-bg {
-        padding-top: 0;
-        /* Zera a distancia do topo da página no tablet */
+        padding: 20px;
     }
 
     /* Tablet: Mantém 2 colunas, mas diminui a proporção da área secundária */
@@ -694,13 +693,17 @@ details[open] .section-content {
         grid-template-columns: 1fr 1.5fr;
         gap: 20px;
         margin-top: 0;
-        /* Remove a folga natural de Desktop (que é 20px) */
+    }
+
+    .details-column {
+        gap: 20px;
     }
 
     .main-column {
         position: sticky;
         /* Mantém sticky, pois ainda há rolamento lateral da coluna 2 */
         top: 20px;
+        gap: 20px;
     }
 }
 
@@ -736,21 +739,28 @@ details[open] .section-content {
 @media (max-width: 689px) {
     .back-layout {
         grid-template-columns: 1fr;
-        gap: 20px;
+        gap: 15px;
+        /* Harmoniza o gap total */
     }
 
-    .main-column {
+    .page-bg {
+        padding: 15px;
+    }
+
+    .main-column,
+    .details-column {
         position: relative;
         top: 0;
         /* Volta o layout interno pra vertical padrão */
         display: flex;
         flex-direction: column;
-        gap: 20px;
+        gap: 15px;
+        /* Cards terão distâncias idênticas em todo o layout */
     }
 
     .tech-grid {
         grid-template-columns: 1fr;
-        gap: 20px;
+        gap: 15px;
     }
 }
 
@@ -758,8 +768,8 @@ details[open] .section-content {
 
     /* Front & Background Mobile Override */
     .page-bg {
-        padding: 0 10px 10px 10px;
-        /* Zera o topo para o back grudar em cima */
+        padding: 15px;
+        /* Zera deficiências e garante a simetria com os cards */
     }
 
     .page-bg::before {
