@@ -674,12 +674,6 @@ details[open] .section-content {
         background-image: url('_jlptcg_background_tablet.jpg');
     }
 
-    /* Força o Back Card a alinhar no topo no iPad/Tablet para evitar margem falsa */
-    .page-bg:not(.front-page) {
-        align-items: flex-start;
-        padding-top: 20px;
-    }
-
     /* Tablet: Mantém 2 colunas, mas diminui a proporção da área secundária */
     .back-layout {
         grid-template-columns: 1fr 1.5fr;
@@ -748,12 +742,6 @@ details[open] .section-content {
     /* Front & Background Mobile Override */
     .page-bg {
         padding: 10px;
-    }
-
-    /* Trava de forma explícita o Back para cima em Celulares (anulando o align-items: center) */
-    .page-bg:not(.front-page) {
-        align-items: flex-start !important;
-        padding-top: 20px;
     }
 
     .page-bg::before {
