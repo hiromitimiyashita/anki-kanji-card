@@ -144,6 +144,50 @@
     background-image: url('_jlptcg_background.jpg');
     background-size: cover;
     background-position: center;
+    /* O escopo GLOBAL de overflow: hidden não pode existir no html/body,
+   senão o AnkiWeb trava o scroll do Back Card também!
+   Vamos travar apenas as propriedades padrões. */
+}
+
+/* ESTILOS ESPECÍFICOS PARA O FRONT (Hack definitivo para iframe do AnkiWeb) */
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* O Front-page vira uma camada absoluta ancorada nas 4 pontas da tela visível do Iframe do Anki */
+.page-bg.front-page {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+    /* No front, bloqueamos o scroll aqui mesmo */
+}
+
+/* Container do Kanji centralizado organicamente dentro da camada ancorada */
+.front-page .front-layout {
+    height: auto !important;
+    min-height: 0 !important;
+    /* Força sobrescrever os 80vh nativos que esticavam para baixo */
+    margin: 0 !important;
+    padding: 0;
+
+    /* A barra do AnkiWeb é absurdamente grande.
+       Isso empurra o kanji para cima pela coroa da cabeça.
+       Aumentamos o valor negativo agressivamente. */
+    transform: translateY(-20vh) !important;
 }
 
 .front-layout {
@@ -628,7 +672,12 @@ details[open] .section-content {
     /* Background Override specifically for Tablet */
     .page-bg::before {
         background-image: url('_jlptcg_background_tablet.jpg');
-        /* Wallpaper para iPad/Tablet Horizontal Vertical */
+    }
+
+    /* Força o Back Card a alinhar no topo no iPad/Tablet para evitar margem falsa */
+    .page-bg:not(.front-page) {
+        align-items: flex-start;
+        padding-top: 20px;
     }
 
     /* Tablet: Mantém 2 colunas, mas diminui a proporção da área secundária */
@@ -699,6 +748,12 @@ details[open] .section-content {
     /* Front & Background Mobile Override */
     .page-bg {
         padding: 10px;
+    }
+
+    /* Trava de forma explícita o Back para cima em Celulares (anulando o align-items: center) */
+    .page-bg:not(.front-page) {
+        align-items: flex-start !important;
+        padding-top: 20px;
     }
 
     .page-bg::before {

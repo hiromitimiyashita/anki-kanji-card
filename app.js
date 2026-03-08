@@ -12,7 +12,7 @@ const mockData = {
     '{{OnReading}}': 'ニチ / ジツ',
     '{{OldForm}}': '☉',
     '{{StrokeOrder}}': '日',
-    '{{Illustration}}': 'sol.jpg',
+    '{{Illustration}}': '_jlptcg_sol.jpg',
     '{{IllustrationExplanation}}': 'picture of the sun / figura do sol',
     '{{CompoundWords}}': `
 <div class="compound-item">
