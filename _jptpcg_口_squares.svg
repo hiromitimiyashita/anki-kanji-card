@@ -1,0 +1,16 @@
+<svg version="1.1" viewBox="0 0 640 640" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="ArrowWideHeavy" overflow="visible" markerHeight="1" markerWidth="1" orient="auto-start-reverse" preserveAspectRatio="xMidYMid" viewBox="0 0 1 1">
+<path d="m1 0-3 3h-2l3-3-3-3h2z" fill="context-stroke" fill-rule="evenodd"/>
+</marker>
+</defs>
+<path d="m420.78 181.72q75 21.094 103.12 51.562 0 4.6875-11.719 21.094-49.219 56.25-67.969 150 23.438 14.062 23.438 23.438-2.3438 11.719-25.781 14.062-7.0312 0-220.31 16.406 0 32.812-14.062 37.5-14.062-2.3438-18.75-35.156-2.3438-18.75-7.0312-65.625-7.0312-89.062-21.094-135.94-4.6875-16.406-16.406-32.812-11.719-14.062-4.6875-18.75 9.375-4.6875 53.906 14.062 7.0312 2.3438 9.375 4.6875 142.97-16.406 203.91-39.844 9.375-4.6875 14.062-4.6875zm0 44.531q-28.125-7.0312-215.62 21.094l16.406 185.16q117.19-14.062 175.78-28.125 14.062-30.469 25.781-107.81 7.0312-65.625-2.3438-70.312z"/>
+<g fill="none">
+<path d="m128 137.6 446.4-4.8-11.2 265.6" marker-end="url(#ArrowWideHeavy)" stroke="#000" stroke-linecap="square" stroke-miterlimit="23.1" stroke-width="14.184" style="paint-order:normal"/>
+<g font-family="'Liberation Serif'" font-size="42.667px" stroke="#000000" stroke-linecap="round" stroke-miterlimit="1.8" stroke-width="1.9507">
+<text x="93.882248" y="237.3036" style="line-height:0px" xml:space="preserve"><tspan x="93.882248" y="237.3036" fill="#000000" font-size="42.667px">1</tspan></text>
+<text x="216.19377" y="200.41345" style="line-height:0px" xml:space="preserve"><tspan x="216.19377" y="200.41345" fill="#000000" font-size="42.667px">2</tspan></text>
+<text x="241.6898" y="505.09534" style="line-height:0px" xml:space="preserve"><tspan x="241.6898" y="505.09534" fill="#000000" font-size="42.667px">3</tspan></text>
+</g>
+</g>
+</svg>

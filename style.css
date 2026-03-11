@@ -19,8 +19,8 @@
     --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     --badge-bg: #e0f2fe;
     --badge-text: #0284c7;
-    --img-filter: invert(1);
-    /* Inverte as linhas brancas do GIMP pra ficarem pretas */
+    --img-filter: invert(0);
+    /* Mantém as linhas do SVG pretas no Light Mode */
 }
 
 @font-face {
@@ -71,13 +71,20 @@
     --shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     --badge-bg: #0d2838;
     --badge-text: #38bdf8;
-    --img-filter: brightness(1.2);
-    /* Mantém branco no escuro */
+    --img-filter: invert(1) brightness(1.2);
+    /* Inverte as linhas SVGs para branco no escuro */
 }
 
 /* Forçando o destaque absurdo dos traços compostos no Dark Mode */
 .nightMode .compound-item .stroke-diagram span,
 .night_mode .compound-item .stroke-diagram span {
+    border: 2px dashed rgba(203, 213, 225, 0.4);
+}
+
+.nightMode .item .svg-wrapper,
+.night_mode .item .svg-wrapper,
+.nightMode .sub-image-item .svg-wrapper,
+.night_mode .sub-image-item .svg-wrapper {
     border: 2px dashed rgba(203, 213, 225, 0.4);
 }
 
@@ -426,9 +433,43 @@ details[open] .section-content {
     margin-bottom: 6px;
 }
 
+.sub-image-item .svg-wrapper {
+    margin: 5px 0 0 0;
+    width: 100%;
+    border: 2px dashed rgba(148, 163, 184, 0.6);
+    border-radius: 8px;
+    background-color: transparent;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
 .sub-image-item img {
     margin: 0;
-    max-height: 40px;
+    width: 100%;
+    max-height: 150px;
+    filter: var(--img-filter);
+}
+
+.item .svg-wrapper {
+    margin-top: 15px;
+    width: 150px;
+    border: 2px dashed rgba(148, 163, 184, 0.6);
+    border-radius: 8px;
+    background-color: transparent;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    box-sizing: border-box;
+    align-self: flex-start;
+}
+
+.item img {
+    margin: 0;
+    width: 100%;
     filter: var(--img-filter);
 }
 
