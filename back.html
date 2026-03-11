@@ -6,11 +6,9 @@
             <div class="panel info-panel">
                 <div class="top-bar">
                     <div class="badge serial">#{{SerialNumber}}</div>
-                    <div class="badge strokes" style="display: flex; align-items: center; gap: 4px;">
+                    <div class="badge strokes">
                         {{StrokeCount}} strokes
-                        <span
-                            style="font-size: 12px; color: var(--text-muted); font-weight: normal; text-transform: lowercase;">/
-                            traços</span>
+                        <span class="strokes-sub">/ traços</span>
                     </div>
                 </div>
 
@@ -22,13 +20,11 @@
                     <div class="meanings">{{Meanings}}</div>
                     <div class="reading-line">
                         <span class="badge kun-badge">KUN</span>
-                        <span class="reading-text">{{KunReading}} <span
-                                style="font-size: 12px; color: var(--text-sub);">/ leitura jap.</span></span>
+                        <span class="reading-text">{{KunReading}} <span class="reading-sub">/ leitura jap.</span></span>
                     </div>
                     <div class="reading-line">
                         <span class="badge on-badge">ON</span>
-                        <span class="reading-text">{{OnReading}} <span
-                                style="font-size: 12px; color: var(--text-sub);">/ leitura chin.</span></span>
+                        <span class="reading-text">{{OnReading}} <span class="reading-sub">/ leitura chin.</span></span>
                     </div>
                 </div>
             </div>
@@ -36,9 +32,7 @@
             <!-- Stroke Order Card -->
             <div class="panel stroke-panel" style="text-align: center;">
                 <div class="section-title">
-                    STROKE ORDER <span
-                        style="font-size: 12px; color: var(--text-sub); font-weight: normal; text-transform: lowercase; letter-spacing: normal;">/
-                        ordem dos traços</span>
+                    STROKE ORDER <span class="section-title-sub">/ ordem dos traços</span>
                 </div>
                 <div class="tech-val stroke-diagram" style="margin-top: 15px;"><span
                         class="main-stroke-box">{{StrokeOrder}}</span></div>
@@ -51,8 +45,7 @@
 
 
             <div class="panel illustration-box">
-                <img src="{{Illustration}}" class="illus-icon" alt="Illustration"
-                    style="max-height: 150px; border-radius: 8px; object-fit: contain; border: 1px solid var(--border);">
+                <img src="{{Illustration}}" class="illus-icon" alt="Illustration">
                 <span class="illus-text">{{IllustrationExplanation}}</span>
             </div>
 
@@ -92,8 +85,7 @@
                             <span class="sub">/ Kanji fonético-ideográfico.</span>
                         </div>
 
-                        <div class="item full-width-item"
-                            style="grid-column: 1 / -1; margin-top: 8px; border-top: 1px solid var(--border); padding-top: 8px;">
+                        <div class="item full-width-item">
                             <strong>Note:</strong> Most kanji are formed by combining kanji characters. Learning the
                             first
                             300
@@ -145,12 +137,11 @@
                             </div>
                         </div>
 
-                        <div class="item full-width-item"
-                            style="grid-column: 1 / -1; margin-top: 15px; border-top: 1px solid var(--border); padding-top: 15px;">
+                        <div class="item full-width-item">
                             <strong>4. Stroke ending: 3 basic ways</strong>
                             There are three ways to end a stroke.
                             <span class="sub">/ Terminação: 3 formas básicas.</span>
-                            <div class="sub-images-flex" style="margin-top: 15px; justify-content: flex-start;">
+                            <div class="sub-images-flex">
                                 <div class="sub-image-item">
                                     <span class="illus-icon">stop</span>
                                     <div class="svg-wrapper">
@@ -177,9 +168,7 @@
 
             <div class="panel compounds-container">
                 <div class="section-title" style="margin-bottom: 15px;">
-                    COMPOUND WORDS <span
-                        style="font-size: 12px; color: var(--text-sub); font-weight: normal; text-transform: lowercase; letter-spacing: normal;">/
-                        palavras compostas</span>
+                    COMPOUND WORDS <span class="section-title-sub">/ palavras compostas</span>
                 </div>
                 <div class="compound-list">
                     {{CompoundWords}}
