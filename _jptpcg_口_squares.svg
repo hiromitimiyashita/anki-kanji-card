@@ -10,7 +10,9 @@
 <g font-family="'Liberation Serif'" font-size="42.667px" stroke="#000000" stroke-linecap="round" stroke-miterlimit="1.8" stroke-width="1.9507">
 <text x="93.882248" y="237.3036" style="line-height:0px" xml:space="preserve"><tspan x="93.882248" y="237.3036" fill="#000000" font-size="42.667px">1</tspan></text>
 <text x="216.19377" y="200.41345" style="line-height:0px" xml:space="preserve"><tspan x="216.19377" y="200.41345" fill="#000000" font-size="42.667px">2</tspan></text>
-<text x="241.6898" y="505.09534" style="line-height:0px" xml:space="preserve"><tspan x="241.6898" y="505.09534" fill="#000000" font-size="42.667px">3</tspan></text>
+<text x="241.6898" y="513.09534" style="line-height:0px" xml:space="preserve"><tspan x="241.6898" y="513.09534" fill="#000000" font-size="42.667px">3</tspan></text>
 </g>
 </g>
+<path d="m64.8 201.6v258.4" marker-end="url(#ArrowWideHeavy)" stroke="#000" stroke-linecap="round" stroke-miterlimit="9.5" stroke-width="14.184"/>
+<path d="m204 552.4h264.8" marker-end="url(#ArrowWideHeavy)" stroke="#000" stroke-linecap="round" stroke-miterlimit="9.5" stroke-width="14.184"/>
 </svg>
